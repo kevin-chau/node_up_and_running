@@ -1,5 +1,5 @@
 var express = require('express')
- var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 
 // createServer() is deprecated
 // var app = express.createServer()
@@ -13,7 +13,7 @@ app.get('/', function(req,res){
   res.send('Welcome to Node Twitter')
 })
 
-app.post('/send', bodyParser(), function(req,res) {
+app.post('/send', bodyParser, function(req,res) {
   if (req.body && req.body.tweet) {
     tweets.push(req.body.tweet)
     res.send({status:"ok", message:"Tweet received"})
